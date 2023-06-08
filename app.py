@@ -1,7 +1,7 @@
 from flask import Flask, redirect, render_template, request
 
-from database import *
-from models import User
+from models.database import *
+from models.models import User
 
 app = Flask(__name__)
 
