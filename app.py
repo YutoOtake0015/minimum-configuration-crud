@@ -31,19 +31,15 @@ def delete(id):
     return redirect('/')
     
 # データ編集
-@app.route('/edit/<id>')
+@app.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
     user = session.query(User).get(id)
+    if request.method == 'POST':
+        user.name = request.form.get('name')
+        user.age = request.form.get('age')
+        session.commit()
+        return redirect('/')
     return render_template('edit.html', user=user)
 
-# データ更新
-@app.route('/update/<id>', methods={'POST'})
-def update(id):
-    user = session.query(User).get(id)
-    user.name = request.form.get('name')
-    user.age = request.form.get('age')
-    session.commit()
-    return redirect('/')
-    
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

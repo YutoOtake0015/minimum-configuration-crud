@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>編集</h1>
-<form action="/update/{{ user.id }}" method="POSt">
+<form action="/edit/{{ user.id }}" method="post">
     <div>名前:
         <input type="text" name="name" value="{{ user.name }}">
     </div>
