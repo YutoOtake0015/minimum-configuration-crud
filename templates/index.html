@@ -1,9 +1,5 @@
 {% extends 'layout.html' %}
 
-{% block head %}
-TOP
-{% endblock %}
-
 {% block content %}
 <h1>新規登録</h1>
 <form action="/insert" method="POST">
@@ -32,9 +28,7 @@ TOP
             <td>{{ user.name }}</td>
             <td>{{ user.age }}</td>
             <th>
-                <form action="/edit/{{ user.id }}" method="POST">
-                    <input type="submit" value="編集">
-                </form>
+                <a href="/edit/{{ user.id }}">編集</a>
                 <form action="/delete/{{ user.id }}" method="POST">
                     <input type="submit" value="削除">
                 </form>
