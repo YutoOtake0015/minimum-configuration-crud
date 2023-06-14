@@ -28,8 +28,8 @@
             <td>{{ user.name }}</td>
             <td>{{ user.age }}</td>
             <th>
-                <a href="/edit/{{ user.id }}">編集</a>
                 <form action="/delete/{{ user.id }}" method="post">
+                    <a href="/edit/{{ user.id }}">編集</a>
                     <input type="submit" value="削除">
                 </form>
             </th>
