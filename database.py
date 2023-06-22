@@ -7,5 +7,5 @@ session = scoped_session(sessionmaker(autocommit=False, autoflush=False,bind=eng
 Base = declarative_base()
 
 if __name__ == '__main__':
-    from models import *
+    from model import *
     Base.metadata.create_all(bind=engine)
