@@ -8,7 +8,6 @@ app = Flask(__name__)
 @app.route('/')
 def select():
     users = session.query(User).all()
-    # users = session.query(User).first()
     return render_template('index.html', users=users)
 
 # データ挿入
