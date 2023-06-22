@@ -1,5 +1,5 @@
 from database import Base
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String
 
 class User(Base):
     # テーブル名
